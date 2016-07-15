@@ -1,6 +1,6 @@
 from setuptools import setup,find_packages
 from glob import glob
-from bugz.definitions import __version__
+from pybugz.definitions import __version__
 
 # To use a consistent encoding
 from codecs import open
