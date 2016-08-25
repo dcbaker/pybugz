@@ -11,7 +11,7 @@ pybugz.d - configuration files for pybugz
 .PP
 .B /etc/pybugz.d/*.conf
 .PP
-.B ~/.bugzrc
+.B $XDG_CONFIG_HOME/bugz/bugzrc, ~/.config/bugz/bugzrc, ~/.bugzrc
 .\" .SH OPTIONS
 .\" .TP
 .\" .B \-o value, \-\^\-long=value
@@ -27,9 +27,10 @@ and should not be modified.
 Files located in /etc/pybugz.d/*.conf, if it exists, are provided by the
 system administrator.
 .PP
-The final file that is read, if it exists, is ~/.bugzrc by default. This
-is the user-specific configuration file. This file name can be
-overridden on the command line by using the --config-file option.
+The final file that is read, if it exists, is the first file found of the set
+$XDG_CONFIG_HOME/bugz/bugzrc, ~/.config/bugz/bugzrc, or ~/.bugzrc by default.
+This is the user-specific configuration file. This file name can be overridden
+on the command line by using the --config-file option.
 .SH CONFIGURATION FILE FORMAT
 A configuration file consists of sections which define parameters for
 the Bugzillas you intend to use. Each section starts with a

@@ -44,19 +44,20 @@ def check_bugz_token():
         os.path.isfile(os.path.expanduser('~/.bugz_tokens'))
     if not tokenFound:
         return
-    print('This version of pybugz no longer supports tokens.')
-    print()
-    print('If the bugzilla you are accessing is 5.0 or newer, you can')
-    print('generate an api key by visiting the preferences section')
-    print('of the Bugzilla web interface.')
-    print('For bugzilla 3.6 or newer, you can use your username and password')
-    print()
-    print('Once you have decided how you want to authenticate,')
-    print('please configure the appropriate settings in ~/.bugzrc')
-    print('and remove ~/.bugz_token  and ~/.bugz_tokens')
-    print()
-    print('see man pybugz.d for ~/.bugzrc settings')
-    print('This decision was made because Bugzilla is deprecating tokens.')
+    print(textwrap.dedent("""\
+        This version of pybugz no longer supports tokens.
+    
+        If the bugzilla you are accessing is 5.0 or newer, you can generate an
+        api key by visiting the preferences section of the Bugzilla web
+        interface.
+        For bugzilla 3.6 or newer, you can use your username and password
+    
+        Once you have decided how you want to authenticate, please configure
+        the appropriate settings in your user config file and remove
+        ~/.bugz_token and ~/.bugz_tokens
+        
+        see man pybugz.d for user config settings This decision was made
+        because Bugzilla is deprecating tokens."""))
 
 
 def login(settings):

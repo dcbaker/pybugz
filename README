@@ -110,7 +110,8 @@ system administrator can override or add to these defaults on a site-wide
 basis by creating a directory /etc/pybugz.d and adding files with a
 .conf extension to this directory. Individual users can override or add
 to all of these settings by placing a file named .bugzrc in their home
-directory.
+directory or XDG_CONFIG_HOME/bugz/bugzrc (which is usually
+~/.config/bugz/bugzrc)
 
 For more information about this configuration system, see the
 pybugz.d (5) man page.
